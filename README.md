@@ -9,7 +9,7 @@ It connects to the specified website and retrieves useful information about the 
 ## Installation
 1. Clone the repository.
     ```sh
-    git clone https://gitlab-dpt-info-sciences.univ-rouen.fr/m2ssi/tls24
+    git clone https://github.com/EdouardRouch/tls_checker
     ```
 2. Make sure you have Python 3 installed on your system.
 3. Install the required dependencies by running the following command:

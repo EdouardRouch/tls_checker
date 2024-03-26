@@ -2361,6 +2361,7 @@ class TLS_Checker:
         console = Console()
         console.print("\n\n")
         explanation = Text(
+        "https://github.com/EdouardRouch/tls_checker\n\n" \
         "This program is a free software. Distribution and modification are allowed under the terms of the GPLv3 license.\n\n" \
         "This program comes with ABSOLUTELY NO WARRANTY.\nUSE IT AT YOUR OWN RISK!", justify="center")
         greetings = Panel(explanation, title="[bold]tls_checker.py v1.0.0", width=75, border_style="green3", padding=(1, 3))
