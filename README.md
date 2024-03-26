@@ -2,9 +2,9 @@
 
 ## Description
 
-The `tls_checker.py` script is a tool for checking the TLS configuration of a given website by comparing it to the ANSSI TLS recommandations. 
+The `tls_checker.py` script is a tool for checking the TLS configuration of a given host by comparing it to the ANSSI TLS recommandations. 
 
-It connects to the specified website and retrieves useful information about the given host's TLS server like the supported TLS versions, cipher suites, certificate details and more !
+It connects to the specified host and retrieves useful information about the given TLS server like the supported TLS versions, cipher suites, certificate details and more !
 
 ## Installation
 1. Clone the repository.
