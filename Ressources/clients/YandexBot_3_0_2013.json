@@ -1,0 +1,25 @@
+{
+  "id": 52,
+  "hex_handshake_bytes": "16030000310100002d030052e5747f771870662109bfd989a73aa284331afbc8ae51ba5d2e64a108cf71c7000006000a000500040100",
+  "lowest_protocol": 768,
+  "highest_protocol": 768,
+  "suite_names": [
+    "TLS_RSA_WITH_3DES_EDE_CBC_SHA",
+    "TLS_RSA_WITH_RC4_128_SHA",
+    "TLS_RSA_WITH_RC4_128_MD5"
+  ],
+  "supports_compression": false,
+  "supports_stapling": false,
+  "supports_tickets": false,
+  "signature_algorithms": [],
+  "elliptic_curves": [],
+  "supports_npn": false,
+  "alpn_protocols": [],
+  "supports_server_name_indication": false,
+  "client_name": "YandexBot",
+  "client_version": "3.0",
+  "protocol_versions_names": [
+    "SSLv3"
+  ],
+  "elliptic_curves_names": []
+}

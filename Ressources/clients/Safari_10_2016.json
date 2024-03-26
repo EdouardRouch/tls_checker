@@ -1,0 +1,72 @@
+{
+  "id": 138,
+  "platform": "OS X 10.12",
+  "hex_handshake_bytes": "16030100e2010000de030357fde32ec4b7eb1c967e535ba93d9129ffd6a35fc5d6b14f785205e2a0c7e35600002c00ffc02cc02bc024c023c00ac009c008c030c02fc028c027c014c013c012009d009c003d003c0035002f000a0100008900000014001200000f6465762e73736c6c6162732e636f6d000a00080006001700180019000b00020100000d00120010040102010501060104030203050306033374000000100030002e0268320568322d31360568322d31350568322d313408737064792f332e3106737064792f3308687474702f312e310005000501000000000012000000170000",
+  "lowest_protocol": 769,
+  "highest_protocol": 771,
+  "suite_names": [
+    "TLS_EMPTY_RENEGOTIATION_INFO_SCSV",
+    "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
+    "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
+    "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384",
+    "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256",
+    "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA",
+    "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA",
+    "TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA",
+    "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
+    "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
+    "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384",
+    "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256",
+    "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA",
+    "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA",
+    "TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA",
+    "TLS_RSA_WITH_AES_256_GCM_SHA384",
+    "TLS_RSA_WITH_AES_128_GCM_SHA256",
+    "TLS_RSA_WITH_AES_256_CBC_SHA256",
+    "TLS_RSA_WITH_AES_128_CBC_SHA256",
+    "TLS_RSA_WITH_AES_256_CBC_SHA",
+    "TLS_RSA_WITH_AES_128_CBC_SHA",
+    "TLS_RSA_WITH_3DES_EDE_CBC_SHA"
+  ],
+  "supports_compression": false,
+  "supports_stapling": true,
+  "supports_tickets": false,
+  "signature_algorithms": [
+    1025,
+    513,
+    1281,
+    1537,
+    1027,
+    515,
+    1283,
+    1539
+  ],
+  "elliptic_curves": [
+    23,
+    24,
+    25
+  ],
+  "supports_npn": true,
+  "alpn_protocols": [
+    "h2",
+    "h2-16",
+    "h2-15",
+    "h2-14",
+    "spdy/3.1",
+    "spdy/3",
+    "http/1.1"
+  ],
+  "supports_server_name_indication": true,
+  "client_name": "Safari",
+  "client_version": "10",
+  "protocol_versions_names": [
+    "TLS 1.0",
+    "TLS 1.1",
+    "TLS 1.2"
+  ],
+  "elliptic_curves_names": [
+    "secp256r1",
+    "secp384r1",
+    "secp521r1"
+  ]
+}

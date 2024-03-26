@@ -1,0 +1,60 @@
+{
+  "id": 125,
+  "platform": "Win 7",
+  "hex_handshake_bytes": "16030100c6010000c20303ff4e7eb1ce359979138cc297b9911c45cd06b1928e4356132844309a471c3c9700001cc02bc02fcca9cca8cc14cc13c00ac014c009c013009c0035002f000a0100007dff0100010000000014001200000f6465762e73736c6c6162732e636f6d0017000000230000000d0012001006010603050105030401040302010203000500050100000000337400000012000000100017001502683208737064792f332e3108687474702f312e3175500000000b00020100000a00080006001d00170018",
+  "lowest_protocol": 769,
+  "highest_protocol": 771,
+  "suite_names": [
+    "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
+    "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
+    "TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256",
+    "TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256",
+    "OLD_TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256",
+    "OLD_TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256",
+    "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA",
+    "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA",
+    "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA",
+    "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA",
+    "TLS_RSA_WITH_AES_128_GCM_SHA256",
+    "TLS_RSA_WITH_AES_256_CBC_SHA",
+    "TLS_RSA_WITH_AES_128_CBC_SHA",
+    "TLS_RSA_WITH_3DES_EDE_CBC_SHA"
+  ],
+  "supports_compression": false,
+  "supports_stapling": true,
+  "supports_tickets": true,
+  "signature_algorithms": [
+    1537,
+    1539,
+    1281,
+    1283,
+    1025,
+    1027,
+    513,
+    515
+  ],
+  "elliptic_curves": [
+    29,
+    23,
+    24
+  ],
+  "supports_npn": true,
+  "alpn_protocols": [
+    "h2",
+    "spdy/3.1",
+    "http/1.1"
+  ],
+  "supports_server_name_indication": true,
+  "client_name": "Chrome",
+  "client_version": "50",
+  "protocol_versions_names": [
+    "TLS 1.0",
+    "TLS 1.1",
+    "TLS 1.2"
+  ],
+  "elliptic_curves_names": [
+    "x25519",
+    "secp256r1",
+    "secp384r1"
+  ]
+}

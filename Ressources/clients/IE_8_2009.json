@@ -1,0 +1,42 @@
+{
+  "id": 21,
+  "platform": "Win 7",
+  "hex_handshake_bytes": "160301007b01000077030151facea9bfdefb38bc40987322ebdc092498fc6e64e491683abd95179ea8405c000018002f00350005000ac013c014c009c00a003200380013000401000036ff0100010000000014001200000f7777772e73736c6c6162732e636f6d000500050100000000000a0006000400170018000b00020100",
+  "lowest_protocol": 768,
+  "highest_protocol": 769,
+  "suite_names": [
+    "TLS_RSA_WITH_AES_128_CBC_SHA",
+    "TLS_RSA_WITH_AES_256_CBC_SHA",
+    "TLS_RSA_WITH_RC4_128_SHA",
+    "TLS_RSA_WITH_3DES_EDE_CBC_SHA",
+    "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA",
+    "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA",
+    "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA",
+    "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA",
+    "TLS_DHE_DSS_WITH_AES_128_CBC_SHA",
+    "TLS_DHE_DSS_WITH_AES_256_CBC_SHA",
+    "TLS_DHE_DSS_WITH_3DES_EDE_CBC_SHA",
+    "TLS_RSA_WITH_RC4_128_MD5"
+  ],
+  "supports_compression": false,
+  "supports_stapling": true,
+  "supports_tickets": false,
+  "signature_algorithms": [],
+  "elliptic_curves": [
+    23,
+    24
+  ],
+  "supports_npn": false,
+  "alpn_protocols": [],
+  "supports_server_name_indication": true,
+  "client_name": "IE",
+  "client_version": "8",
+  "protocol_versions_names": [
+    "SSLv3",
+    "TLS 1.0"
+  ],
+  "elliptic_curves_names": [
+    "secp256r1",
+    "secp384r1"
+  ]
+}

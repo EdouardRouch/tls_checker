@@ -1,0 +1,68 @@
+{
+  "id": 89,
+  "platform": "OS X",
+  "hex_handshake_bytes": "16030100d0010000cc030377d43ab02ced3617a218bb7313d9f271111f4d4f92b2d4d532e79c243ba0221500002ac02fc02b009ecc14cc13cc15c014c00a0039c013c0090033c011c007009c0035002f00050004000a00ff0100007900000014001200000f6465762e73736c6c6162732e636f6d0017000000230000000d001600140601060305010503040104030301030302010203000500050100000000337400000012000000100014001208687474702f312e3108737064792f332e3175500000000b00020100000a00080006001700180019",
+  "lowest_protocol": 769,
+  "highest_protocol": 771,
+  "suite_names": [
+    "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
+    "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
+    "TLS_DHE_RSA_WITH_AES_128_GCM_SHA256",
+    "OLD_TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256",
+    "OLD_TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256",
+    "OLD_TLS_DHE_RSA_WITH_CHACHA20_POLY1305_SHA256",
+    "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA",
+    "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA",
+    "TLS_DHE_RSA_WITH_AES_256_CBC_SHA",
+    "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA",
+    "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA",
+    "TLS_DHE_RSA_WITH_AES_128_CBC_SHA",
+    "TLS_ECDHE_RSA_WITH_RC4_128_SHA",
+    "TLS_ECDHE_ECDSA_WITH_RC4_128_SHA",
+    "TLS_RSA_WITH_AES_128_GCM_SHA256",
+    "TLS_RSA_WITH_AES_256_CBC_SHA",
+    "TLS_RSA_WITH_AES_128_CBC_SHA",
+    "TLS_RSA_WITH_RC4_128_SHA",
+    "TLS_RSA_WITH_RC4_128_MD5",
+    "TLS_RSA_WITH_3DES_EDE_CBC_SHA",
+    "TLS_EMPTY_RENEGOTIATION_INFO_SCSV"
+  ],
+  "supports_compression": false,
+  "supports_stapling": true,
+  "supports_tickets": true,
+  "signature_algorithms": [
+    1537,
+    1539,
+    1281,
+    1283,
+    1025,
+    1027,
+    769,
+    771,
+    513,
+    515
+  ],
+  "elliptic_curves": [
+    23,
+    24,
+    25
+  ],
+  "supports_npn": true,
+  "alpn_protocols": [
+    "http/1.1",
+    "spdy/3.1"
+  ],
+  "supports_server_name_indication": true,
+  "client_name": "Chrome",
+  "client_version": "40",
+  "protocol_versions_names": [
+    "TLS 1.0",
+    "TLS 1.1",
+    "TLS 1.2"
+  ],
+  "elliptic_curves_names": [
+    "secp256r1",
+    "secp384r1",
+    "secp521r1"
+  ]
+}

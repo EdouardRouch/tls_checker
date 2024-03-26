@@ -1,0 +1,60 @@
+{
+  "id": 167,
+  "hex_handshake_bytes": "16030100cd010000c90303147d888991ca204734e877892768b22115777c234a99c99a60188238a466a41d00001c4a4acca9cca8c02bc02fc02cc030c013c014009c009d002f0035000a01000084eaea0000ff0100010000000014001200000f6465762e73736c6c6162732e636f6d0017000000230000000d00140012040308040401050308050501080606010201000500050100000000001200000010000e000c02683208687474702f312e3175500000000b00020100000a000a0008dada001d00170018001b0003020002dada000100",
+  "lowest_protocol": 769,
+  "highest_protocol": 771,
+  "suite_names": [
+    "TLS_GREASE_4A",
+    "TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256",
+    "TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256",
+    "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
+    "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
+    "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
+    "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
+    "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA",
+    "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA",
+    "TLS_RSA_WITH_AES_128_GCM_SHA256",
+    "TLS_RSA_WITH_AES_256_GCM_SHA384",
+    "TLS_RSA_WITH_AES_128_CBC_SHA",
+    "TLS_RSA_WITH_AES_256_CBC_SHA",
+    "TLS_RSA_WITH_3DES_EDE_CBC_SHA"
+  ],
+  "supports_compression": false,
+  "supports_stapling": true,
+  "supports_tickets": true,
+  "signature_algorithms": [
+    1027,
+    2052,
+    1025,
+    1283,
+    2053,
+    1281,
+    2054,
+    1537,
+    513
+  ],
+  "elliptic_curves": [
+    56026,
+    29,
+    23,
+    24
+  ],
+  "supports_npn": false,
+  "alpn_protocols": [
+    "h2",
+    "http/1.1"
+  ],
+  "supports_server_name_indication": true,
+  "client_name": "Android",
+  "client_version": "7.0",
+  "protocol_versions_names": [
+    "TLS 1.0",
+    "TLS 1.1",
+    "TLS 1.2"
+  ],
+  "elliptic_curves_names": [
+    "x25519",
+    "secp256r1",
+    "secp384r1"
+  ]
+}

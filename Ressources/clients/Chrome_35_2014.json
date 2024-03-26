@@ -1,0 +1,67 @@
+{
+  "id": 69,
+  "platform": "Win 7",
+  "hex_handshake_bytes": "16030100d2010000ce03032cb92528d05b1cf32e6b5384a7d39ddf0908f656e4572520c5bac4bf96621434000028cc14cc13c02bc02f009ec00ac009c013c014c007c011003300320039009c002f0035000a000500040100007d00000014001200000f6465762e73736c6c6162732e636f6dff01000100000a00080006001700180019000b0002010000230000337400000010001b001906737064792f3308737064792f332e3108687474702f312e3175500000000500050100000000000d001200100401050102010403050302030402020200120000",
+  "lowest_protocol": 768,
+  "highest_protocol": 771,
+  "suite_names": [
+    "OLD_TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256",
+    "OLD_TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256",
+    "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
+    "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
+    "TLS_DHE_RSA_WITH_AES_128_GCM_SHA256",
+    "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA",
+    "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA",
+    "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA",
+    "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA",
+    "TLS_ECDHE_ECDSA_WITH_RC4_128_SHA",
+    "TLS_ECDHE_RSA_WITH_RC4_128_SHA",
+    "TLS_DHE_RSA_WITH_AES_128_CBC_SHA",
+    "TLS_DHE_DSS_WITH_AES_128_CBC_SHA",
+    "TLS_DHE_RSA_WITH_AES_256_CBC_SHA",
+    "TLS_RSA_WITH_AES_128_GCM_SHA256",
+    "TLS_RSA_WITH_AES_128_CBC_SHA",
+    "TLS_RSA_WITH_AES_256_CBC_SHA",
+    "TLS_RSA_WITH_3DES_EDE_CBC_SHA",
+    "TLS_RSA_WITH_RC4_128_SHA",
+    "TLS_RSA_WITH_RC4_128_MD5"
+  ],
+  "supports_compression": false,
+  "supports_stapling": true,
+  "supports_tickets": true,
+  "signature_algorithms": [
+    1025,
+    1281,
+    513,
+    1027,
+    1283,
+    515,
+    1026,
+    514
+  ],
+  "elliptic_curves": [
+    23,
+    24,
+    25
+  ],
+  "supports_npn": true,
+  "alpn_protocols": [
+    "spdy/3",
+    "spdy/3.1",
+    "http/1.1"
+  ],
+  "supports_server_name_indication": true,
+  "client_name": "Chrome",
+  "client_version": "35",
+  "protocol_versions_names": [
+    "SSLv3",
+    "TLS 1.0",
+    "TLS 1.1",
+    "TLS 1.2"
+  ],
+  "elliptic_curves_names": [
+    "secp256r1",
+    "secp384r1",
+    "secp521r1"
+  ]
+}

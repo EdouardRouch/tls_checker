@@ -1,0 +1,65 @@
+{
+  "id": 144,
+  "platform": "Win 10",
+  "hex_handshake_bytes": "16030300c7010000c303035a72ab502215e916a98bf9cf7392b4770a76d76d49338c253d054f463514d52b000026c02cc02bc030c02fc024c023c028c027c00ac009c014c013009d009c003d003c0035002f000a0100007400000014001200000f6465762e73736c6c6162732e636f6d000500050100000000000a00080006001d00170018000b00020100000d00140012040105010201040305030203020206010603002300000010000e000c02683208687474702f312e310017000000180006000a03020100ff01000100",
+  "lowest_protocol": 769,
+  "highest_protocol": 771,
+  "suite_names": [
+    "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
+    "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
+    "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
+    "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
+    "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384",
+    "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256",
+    "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384",
+    "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256",
+    "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA",
+    "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA",
+    "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA",
+    "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA",
+    "TLS_RSA_WITH_AES_256_GCM_SHA384",
+    "TLS_RSA_WITH_AES_128_GCM_SHA256",
+    "TLS_RSA_WITH_AES_256_CBC_SHA256",
+    "TLS_RSA_WITH_AES_128_CBC_SHA256",
+    "TLS_RSA_WITH_AES_256_CBC_SHA",
+    "TLS_RSA_WITH_AES_128_CBC_SHA",
+    "TLS_RSA_WITH_3DES_EDE_CBC_SHA"
+  ],
+  "supports_compression": false,
+  "supports_stapling": true,
+  "supports_tickets": true,
+  "signature_algorithms": [
+    1025,
+    1281,
+    513,
+    1027,
+    1283,
+    515,
+    514,
+    1537,
+    1539
+  ],
+  "elliptic_curves": [
+    29,
+    23,
+    24
+  ],
+  "supports_npn": false,
+  "alpn_protocols": [
+    "h2",
+    "http/1.1"
+  ],
+  "supports_server_name_indication": true,
+  "client_name": "Edge",
+  "client_version": "15",
+  "protocol_versions_names": [
+    "TLS 1.0",
+    "TLS 1.1",
+    "TLS 1.2"
+  ],
+  "elliptic_curves_names": [
+    "x25519",
+    "secp256r1",
+    "secp384r1"
+  ]
+}

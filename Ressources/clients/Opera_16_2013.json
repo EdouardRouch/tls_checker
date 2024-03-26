@@ -1,0 +1,53 @@
+{
+  "id": 39,
+  "platform": "Win 7",
+  "hex_handshake_bytes": "1603010099010000950302524d41d17646ea784e8625eb64a4f5f4c94ad345ad0b4d9d8da570b2db45db64000028c00ac0140039006b0035003dc007c009c023c011c013c02700330067003200050004002f003c000a0100004400000014001200000f7777772e73736c6c6162732e636f6dff01000100000a00080006001700180019000b000201000023000033740000754f0000000500050100000000",
+  "lowest_protocol": 768,
+  "highest_protocol": 770,
+  "suite_names": [
+    "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA",
+    "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA",
+    "TLS_DHE_RSA_WITH_AES_256_CBC_SHA",
+    "TLS_DHE_RSA_WITH_AES_256_CBC_SHA256",
+    "TLS_RSA_WITH_AES_256_CBC_SHA",
+    "TLS_RSA_WITH_AES_256_CBC_SHA256",
+    "TLS_ECDHE_ECDSA_WITH_RC4_128_SHA",
+    "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA",
+    "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256",
+    "TLS_ECDHE_RSA_WITH_RC4_128_SHA",
+    "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA",
+    "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256",
+    "TLS_DHE_RSA_WITH_AES_128_CBC_SHA",
+    "TLS_DHE_RSA_WITH_AES_128_CBC_SHA256",
+    "TLS_DHE_DSS_WITH_AES_128_CBC_SHA",
+    "TLS_RSA_WITH_RC4_128_SHA",
+    "TLS_RSA_WITH_RC4_128_MD5",
+    "TLS_RSA_WITH_AES_128_CBC_SHA",
+    "TLS_RSA_WITH_AES_128_CBC_SHA256",
+    "TLS_RSA_WITH_3DES_EDE_CBC_SHA"
+  ],
+  "supports_compression": false,
+  "supports_stapling": true,
+  "supports_tickets": true,
+  "signature_algorithms": [],
+  "elliptic_curves": [
+    23,
+    24,
+    25
+  ],
+  "supports_npn": true,
+  "alpn_protocols": [],
+  "supports_server_name_indication": true,
+  "client_name": "Opera",
+  "client_version": "16",
+  "protocol_versions_names": [
+    "SSLv3",
+    "TLS 1.0",
+    "TLS 1.1"
+  ],
+  "elliptic_curves_names": [
+    "secp256r1",
+    "secp384r1",
+    "secp521r1"
+  ]
+}

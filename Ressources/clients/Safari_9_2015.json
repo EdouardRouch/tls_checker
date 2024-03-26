@@ -1,0 +1,74 @@
+{
+  "id": 111,
+  "platform": "OS X 10.11",
+  "hex_handshake_bytes": "16030100e2010000de030355def1c4d1f6a12227389012da236581104b0bfa8b8a5bc849372531349dccc600003400ffc02cc02bc024c023c00ac009c008c030c02fc028c027c014c013c012009d009c003d003c0035002f000ac007c011000500040100008100000014001200000f6465762e73736c6c6162732e636f6d000a00080006001700180019000b00020100000d000e000c0501040102010503040302033374000000100030002e0268320568322d31360568322d31350568322d313408737064792f332e3106737064792f3308687474702f312e3100050005010000000000120000",
+  "lowest_protocol": 769,
+  "highest_protocol": 771,
+  "suite_names": [
+    "TLS_EMPTY_RENEGOTIATION_INFO_SCSV",
+    "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
+    "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
+    "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384",
+    "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256",
+    "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA",
+    "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA",
+    "TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA",
+    "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
+    "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
+    "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384",
+    "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256",
+    "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA",
+    "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA",
+    "TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA",
+    "TLS_RSA_WITH_AES_256_GCM_SHA384",
+    "TLS_RSA_WITH_AES_128_GCM_SHA256",
+    "TLS_RSA_WITH_AES_256_CBC_SHA256",
+    "TLS_RSA_WITH_AES_128_CBC_SHA256",
+    "TLS_RSA_WITH_AES_256_CBC_SHA",
+    "TLS_RSA_WITH_AES_128_CBC_SHA",
+    "TLS_RSA_WITH_3DES_EDE_CBC_SHA",
+    "TLS_ECDHE_ECDSA_WITH_RC4_128_SHA",
+    "TLS_ECDHE_RSA_WITH_RC4_128_SHA",
+    "TLS_RSA_WITH_RC4_128_SHA",
+    "TLS_RSA_WITH_RC4_128_MD5"
+  ],
+  "supports_compression": false,
+  "supports_stapling": true,
+  "supports_tickets": false,
+  "signature_algorithms": [
+    1281,
+    1025,
+    513,
+    1283,
+    1027,
+    515
+  ],
+  "elliptic_curves": [
+    23,
+    24,
+    25
+  ],
+  "supports_npn": true,
+  "alpn_protocols": [
+    "h2",
+    "h2-16",
+    "h2-15",
+    "h2-14",
+    "spdy/3.1",
+    "spdy/3",
+    "http/1.1"
+  ],
+  "supports_server_name_indication": true,
+  "client_name": "Safari",
+  "client_version": "9",
+  "protocol_versions_names": [
+    "TLS 1.0",
+    "TLS 1.1",
+    "TLS 1.2"
+  ],
+  "elliptic_curves_names": [
+    "secp256r1",
+    "secp384r1",
+    "secp521r1"
+  ]
+}

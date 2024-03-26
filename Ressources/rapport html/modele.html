@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Résultat Configuration TLS</title>
+        <!-- <link rel="stylesheet" href="bootstrap-5.3.3-dist/bootstrap.css">
+        <script type="text/javascript" src="bootstrap-5.3.3-dist/bootstrap.js"></script> -->
+    </head>
+    <body>
+        <div class="container-fluid pad-t-3">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col">
+                        <div class="Titre-div  border-table col-form-label-sm">
+                            Informations Générateur de Résultats TLS
+                        </div>
+                        <table class="table table-bordered table-secondary col-form-label-sm" id="informations">
+                            <thead>
+                                <!-- <tr class="table-tertiary  border-table">
+                                    <th colspan="7">Informations Générateur de Résultats TLS</th>
+                                </tr> -->
+                                <tr class="text-center align-middle">
+                                    <th scope="col" colspan="2">#✕</th>
+                                    <th scope="col" colspan="2">#✓</th>
+                                    <th scope="col" colspan="2">#Non vérifiable</th>
+                                    <!-- <th scope="col" colspan="2">#Non testé</th> -->
+                                    <th scope="col" colspan="1">Pourcentage validation</th>
+                                    <th scope="col">Note</th>
+                                </tr>
+                            </thead>
+                            <tbody class="align-middle text-center">
+                                <tr class="">
+                                    <td class="text-white bg-danger" id="echec-critique">0</td>
+                                    <td class="text-danger-emphasis bg-danger-subtle" id="echec">0</td>
+                                    <td class="text-white bg-success" id="succes-critique">0</td>
+                                    <td class="text-success-emphasis bg-success-subtle" id="succes">0</td>
+                                    <td class="text-black bg-warning" id="non-verifie-critique">0</td>
+                                    <td class="text-warning-emphasis bg-warning-subtle" id="non-verifie">0</td>
+                                    <!-- <td class="text-white bg-secondary" id="non-teste-critique">0</td>
+                                    <td class="text-secondary-emphasis bg-secondary-subtle" id="non-teste">0</td> -->
+                                    <td scope="col" id="pourcentage">0</td>
+                                    <td id="note">F</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="Titre-div  border-table col-form-label-sm">
+                            Résumé des Notes d'Évaluation
+                        </div>
+                        <table class="table table-bordered table-secondary col-form-label-sm" id="informations">
+                            <thead>
+                                <!-- <tr class="table-tertiary  border-table">
+                                    <th colspan="7">Informations Générateur de Résultats TLS</th>
+                                </tr> -->
+                                <tr class="text-center align-middle">
+                                    <th scope="col">Catégorie</th>
+                                    <th scope="col">Pourcentage</th>
+                                    <th scope="col">Note</th>
+                                    <th scope="col">Commentaire</th>
+                                    <th scope="col">Recommandation</th>
+                                </tr>
+                            </thead>
+                            <tbody class="align-middle text-center" id="resume-eval">
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col">
+                        <div class="Titre-div  border-table col-form-label-sm">
+                            Informations Connexion TLS
+                        </div>
+                        <table class="table table-bordered table-secondary align-middle col-form-label-sm" id="informations">
+                            <thead class="text-center align-middle">
+                                <tr>
+                                    <th scope="col">Version</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Heure</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-center align-middle">
+                                <tr>
+                                    <td>1</td>
+                                    <td id="date"></td>
+                                    <td id="heure"></td>
+                                </tr>
+                            </tbody>
+                            <thead class="text-center align-middle">
+                                <!-- <tr class="table-tertiary  border-table">
+                                    <th colspan="4">Informations Connexion TLS</th>
+                                </tr> -->
+                                <tr>
+                                    <th scope="col">Serveur</th>
+                                    <th scope="col">Versions TLS supportées</th>
+                                    <th scope="col">Suites cryptographique</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-center align-middle">
+                                <tr>
+                                    <td id="nom-serveur"></td>
+                                    <td id="versions-TLS"></td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-suites-crypto">
+                                            Afficher les suites
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <thead class="text-center align-middle">
+                                <tr>
+                                    <th scope="col">Fichier de règle</th>
+                                    <th scope="col">Certificat Serveur</th>
+                                    <th scope="col">Préférences des suites du serveur</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-center align-middle">
+                                <tr>
+                                    <td id="fichier-regle"></td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-cert-serveur">
+                                            Afficher le certificat
+                                        </button>
+                                      </td>
+                                    <td id="pref-serveur"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="Titre-div  border-table col-form-label-sm">
+                Informations Connexion TLS
+            </div>
+            <div class="bg-secondary-subtle py-2 px-3">
+                <div class="row">
+                    <div class="w-initiale">
+                        <table class="table-bordered table-information my-1 col-form-label-sm">
+                            <tbody>
+                                <tr>
+                                    <td class="bg-danger tailleColonne"></td>
+                                    <td class="bg-danger-subtle tailleColonne"></td>
+                                    <td class="tailleColonne">✕</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="w-initiale">
+                        <table class="table-information table-bordered my-1 col-form-label-sm">
+                            <tbody>
+                                <tr>
+                                    <td class="bg-success tailleColonne"></td>
+                                    <td class="bg-success-subtle tailleColonne"></td>
+                                    <td class="tailleColonne">✓</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="w-initiale">
+                        <table class="table-information table-bordered my-1 col-form-label-sm">
+                            <tbody>
+                                <tr>
+                                    <td class="bg-warning tailleColonne"></td>
+                                    <td class="bg-warning-subtle tailleColonne"></td>
+                                    <td class="tailleColonne">Non auditable</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- <div class="w-initiale">
+                        <table class="table-information table-bordered my-1 col-form-label-sm">
+                            <tbody>
+                                <tr>
+                                    <td class="bg-secondary tailleColonne"></td>
+                                    <td class="bg-secondary-subtle tailleColonne"></td>
+                                    <td class="tailleColonne">Non Testé</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div> -->
+                </div>
+            </div>
+            <table class="table table-secondary align-middle col-form-label-sm tableFixHead" id="regles">
+                <thead class="text-center">
+                    <tr class="table-tertiary">
+                        <th scope="col">ID</th>
+                        <th scope="col">Titre</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Correction</th>
+                        <th scope="col">Critique</th>
+                        <th scope="col">Résultat</th>
+                    </tr>
+                </thead>
+                <tbody id="regles" class="text-center align-middle">
+                </tbody>
+            </table>
+            <table class="table table-secondary align-middle col-form-label-sm tableFixHead" id="regles">
+                <thead class="text-center">
+                    <tr class="table-tertiary">
+                        <th scope="col">Clients</th>
+                        <th scope="col">Supportés</th>
+                    </tr>
+                </thead>
+                <tbody id="clients" class="text-center align-middle">
+                </tbody>
+            </table>
+        </div>
+    </body>
+    <div class="modal fade" id="modal-cert-serveur" tabindex="-1" aria-labelledby="modal-cert-serveur" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Certificat Serveur</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                    <tr>
+                        <th colspan="2"><h5>Informations Générales</h5></th>
+                    </tr>
+                </thead>
+                <tbody id="info-cert-serveur">
+                </tbody>
+              </table>
+              <br/>
+              <table class="table">
+                <thead>
+                    <tr>
+                        <th colspan="2"><h5>Extensions</h5></th>
+                    </tr>
+                </thead>
+                <tbody id="info-extensions-serveur">
+                </tbody>
+              </table>      
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="modal-suites-crypto" tabindex="-1" aria-labelledby="modal-suites-crypto" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Suites cryptographique</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <table class="table">
+                    <tbody id="suites-cryptographique">
+                    </tbody>
+                </table>
+              </table>      
+            </div>
+          </div>
+        </div>
+      </div>
+</html>

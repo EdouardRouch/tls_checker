@@ -1,0 +1,58 @@
+{
+  "id": 112,
+  "platform": "iOS 9",
+  "hex_handshake_bytes": "16030300c6010000c2030355def146b7ed606006d8d54a3ece6c9c1b5070b51ce0e81d354178f0311d2e0100001800ffc02cc02bc024c00ac023c009c030c02fc028c027c0130100008100000014001200000f6465762e73736c6c6162732e636f6d000a00080006001700180019000b00020100000d000e000c0501040102010503040302033374000000100030002e0268320568322d31360568322d31350568322d313408737064792f332e3106737064792f3308687474702f312e3100050005010000000000120000",
+  "lowest_protocol": 771,
+  "highest_protocol": 771,
+  "suite_names": [
+    "TLS_EMPTY_RENEGOTIATION_INFO_SCSV",
+    "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
+    "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
+    "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384",
+    "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA",
+    "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256",
+    "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA",
+    "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
+    "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
+    "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384",
+    "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256",
+    "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA"
+  ],
+  "supports_compression": false,
+  "supports_stapling": true,
+  "supports_tickets": false,
+  "signature_algorithms": [
+    1281,
+    1025,
+    513,
+    1283,
+    1027,
+    515
+  ],
+  "elliptic_curves": [
+    23,
+    24,
+    25
+  ],
+  "supports_npn": true,
+  "alpn_protocols": [
+    "h2",
+    "h2-16",
+    "h2-15",
+    "h2-14",
+    "spdy/3.1",
+    "spdy/3",
+    "http/1.1"
+  ],
+  "supports_server_name_indication": true,
+  "client_name": "Apple ATS",
+  "client_version": "9",
+  "protocol_versions_names": [
+    "TLS 1.2"
+  ],
+  "elliptic_curves_names": [
+    "secp256r1",
+    "secp384r1",
+    "secp521r1"
+  ]
+}

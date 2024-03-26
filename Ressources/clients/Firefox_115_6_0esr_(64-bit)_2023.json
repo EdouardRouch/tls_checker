@@ -1,0 +1,65 @@
+{
+  "id": 200,
+  "hex_handshake_bytes": "d20745311c849c8a69ee700ee39d23b6567c90eee21f6af46cdc28e7f1f4e597",
+  "lowest_protocol": 771,
+  "highest_protocol": 772,
+  "suite_names": [
+    "TLS_AES_128_GCM_SHA256",
+    "TLS_CHACHA20_POLY1305_SHA256",
+    "TLS_AES_256_GCM_SHA384",
+    "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
+    "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
+    "TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256",
+    "TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256",
+    "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
+    "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
+    "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA",
+    "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA",
+    "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA",
+    "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA",
+    "TLS_RSA_WITH_AES_128_GCM_SHA256",
+    "TLS_RSA_WITH_AES_256_GCM_SHA384",
+    "TLS_RSA_WITH_AES_128_CBC_SHA",
+    "TLS_RSA_WITH_AES_256_CBC_SHA"
+  ],
+  "supports_compression": false,
+  "supports_stapling": true,
+  "supports_tickets": true,
+  "signature_algorithms": [
+    1283,
+    1539,
+    2052,
+    2053,
+    2054,
+    1025,
+    1281,
+    1537,
+    515,
+    513
+  ],
+  "elliptic_curves": [
+    29,
+    23,
+    24,
+    25,
+    256,
+    257
+  ],
+  "supports_npn": true,
+  "alpn_protocols": [],
+  "supports_server_name_indication": true,
+  "client_name": "Firefox",
+  "client_version": "115.6.0esr (64-bit)",
+  "protocol_versions_names": [
+    "TLS 1.2",
+    "TLS 1.3"
+  ],
+  "elliptic_curves_names": [
+    "x25519",
+    "secp256r1",
+    "secp384r1",
+    "secp521r1",
+    "ffdhe2048",
+    "ffdhe3072"
+  ]
+}

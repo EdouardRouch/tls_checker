@@ -1,0 +1,814 @@
+{
+    "R1": {
+        "title": "Restreindre la compatibilité en fonction du profil des clients",
+        "description": "Lorsque les clients d’un serveur ne sont pas maîtrisés, il convient d’établir un profil des clients à souhaités.",
+        "auditable": false,
+        "critical": false,
+        "mitigation": "Dresser une liste exhaustive des clients potentiels de ce serveur et leurs spécificités technologiques."
+    },
+
+    "R2": {
+        "title": "Utiliser des composants logiciels à jour",
+        "description": "Les composants dont dépend le déploiement de TLS doivent être tenus à jour.",
+        "auditable": false,
+        "critical": false,
+        "mitigation": "Mettre au point une politique de mise à jour des systèmes et des logiciels, et la respecter."
+    },
+    "R3.1": {
+        "title": "Privilégier TLS 1.3 et accepter TLS 1.2",
+        "description": "La version TLS 1.3 doit être prise en charge et privilégiée. La version TLS 1.2 est également acceptée sous condition de suivre les recommandations du guide.",
+        "requirements": {
+            "b_in_a": {
+                "named_protocols": "TLS 1.3"
+            }
+        },
+        "auditable": true,
+        "mitigation": "Utiliser le protocole TLS 1.3."
+    },
+    "R3.2": {
+        "title": "Privilégier TLS 1.3 et accepter TLS 1.2",
+        "description": "La version TLS 1.3 doit être prise en charge et privilégiée. La version TLS 1.2 est également acceptée sous condition de suivre les recommandations du guide.",
+        "requirements": {
+            "b_in_a": {
+                "named_protocols": "TLS 1.2"
+            }
+        },
+        "critical": false,
+        "mitigation": "Utiliser le protocole TLS 1.3."
+    },
+
+    "R4": {
+        "title": "Ne pas utiliser SSLv2, SSLv3, TLS 1.0 et TLS 1.1",
+        "description": "Les versions SSLv2, SSLv3, TLS 1.0 et TLS 1.1 sont à proscrire. De plus, il faut privilégier l’usage de composants logiciels qui ne prennent pas en charge ces versions du protocole, par exemple parce que le support de ces versions a été désactivé à la compilation.",
+        "requirements": {
+            "and": [
+                {
+                    "not": {
+                        "b_in_a": {
+                            "named_protocols": "TLS 1.0"
+                        }
+                    }
+                },
+                {
+                    "not": {
+                        "b_in_a": {
+                            "named_protocols": "TLS 1.1"
+                        }
+                    }
+                },
+                {
+                    "not": {
+                        "b_in_a": {
+                            "named_protocols": "SSLv2"
+                        }
+                    }
+                },
+                {
+                    "not": {
+                        "b_in_a": {
+                            "named_protocols": "SSLv3"
+                        }
+                    }
+                }
+            ]
+        },
+        "mitigation": "Désactiver TLS 1.0, TLS 1.1, SSLv2 et SSLv3"
+    },
+
+    "R5": {
+        "title": "Authentifier le serveur à l’échange de clé",
+        "description": "Au cours d’un échange de clé, le serveur doit être authentifié par le client. Les alternatives anonymisées de ces échanges ou reposant sur l’utilisation de certificat brut définies dans la RFC 7250 sont fortement déconseillées (la validité de lien entre une clé publique reçue et l’entité attendue est indépendate du protocole TLS en cas d’utilisation de clé publique au format brut).",
+        "requirements": {
+                "validate_cert_chain": true
+        },
+        "mitigation": "TODO"
+    },
+
+    "R6": {
+        "title": "Échanger les clés en assurant toujours la PFS",
+        "description": "La propriété de confidentialité persistante doit être assurée. Il faut pour cela employer une suite cryptographique reposant sur un échange Diffie–Hellman éphémère (ECDHE ou, à défaut, DHE).",
+        "requirements": {
+            "or": [
+                {
+                    "named_tls_version": "TLS 1.3"
+                },
+                {
+                    "b_in_a": {
+                        "named_chosen_cipher": "_ECDHE_"
+                    }
+                },
+                {
+                    "b_in_a": {
+                        "named_chosen_cipher": "_DHE_"
+                    }
+                }
+            ]
+        },
+        "mitigation": "Employer une suite cryptographique reposant sur un échange Diffie–Hellman éphémère (ECDHE ou, à défaut, DHE)"
+    },
+    "R7": {
+        "title": "Échanger les clés avec l’algorithme ECDHE",
+        "description": "Les échanges de clés ECDHE doivent être privilégiés, à l’aide des courbes secp256r1,secp384r1, secp521r1. Les courbes x25519 et x448 constituent des variantes acceptables. Les courbes brainpoolP256r, brainpoolP384r et brainpoolP512r1 sont également acceptables.",
+        "requirements": {
+            "a_in_b": {
+                "named_curves": [
+                    "secp256r1",
+                    "secp384r1",
+                    "secp521r1",
+                    "x25519",
+                    "x448",
+                    "brainpoolP256r1",
+                    "brainpoolP384r1",
+                    "brainpoolP512r1"
+                ]
+            }
+        },
+        "mitigation": "Utiliser de ECDHE pour échanges de clés avec une de ces courbes : \n- Privilégiés: secp256r1, secp384r1, secp521r1.\n- Acceptables: x25519, x448, brainpoolP256r, brainpoolP384r et brainpoolP512r1"
+    },
+    "R7-": {
+        "title": "Échanger les clés avec l’algorithme DHE",
+        "description": "Les échanges de clés DHE sont tolérés en utilisant les groupes 2048-bits ou plus",
+        "requirements": {
+            "and": [
+                {
+                    "not": {
+                        "b_in_a": {
+                            "named_protocols": "TLS 1.3"
+                        }
+                    }
+                },
+                {
+                    "b_in_a": {
+                        "named_chosen_cipher": "_DHE_"
+                    }
+                },
+                {
+                    "greater_or_equal": {
+                        "public_key_size": 2048
+                    }
+                }
+            ]
+        },
+        "critical": false,
+        "mitigation": "Utiliser ECDHE pour les échanges de clés avec une de ces courbes : \n- Privilégiés: secp256r1, secp384r1, secp521r1.\n- Acceptables: x25519, x448, brainpoolP256r, brainpoolP384r et brainpoolP512r1 \nOU\n DHE avec des groupes 2048-bits ou plus (si année>2030 alors 3072-bits ou plus )"
+    },
+    "R8": {
+        "title": "Authentifier le serveur par certificat",
+        "description": "Au cours d’un échange de clés, le serveur doit être authentifié par le client à l’aide d’un mécanisme asymétrique. Les méthodes basées sur ECDSA ou EdDSA sont à privilégier. Les méthodes basées sur RSA sont tolérées (RSASSA-PSS ou à défaut RSASSA-PKCS1-v1_5).",
+        "requirements": {
+            "or": [
+                {
+                    "named_tls_version": "TLS 1.3"
+                },
+                {
+                    "b_in_a": {
+                        "named_chosen_cipher": "ECDSA"
+                    }
+                },
+                {
+                    "b_in_a": {
+                        "named_chosen_cipher": "EdDSA"
+                    }
+                },
+                {
+                    "b_in_a": {
+                        "named_chosen_cipher": "RSA"
+                    }
+                }
+            ]
+        },
+        "mitigation": "Utiliser un mécanisme asymétrique pour l’authentification du serveur : \n- Privilégié : ECDSA ou EdDSA\n- Acceptables :Les méthodes basées sur RSA RSASSA-PSS ou à défaut RSASSA-PKCS1-v1_5."
+    },
+    "R8-": {
+        "title": "Authentifier le serveur avec un mécanisme symétrique",
+        "description": "Au cours d’un échange de clés, l’authentification du serveur par le client à l’aide d’un mécanisme symétrique est toléré.",
+        "requirements": {
+            "b_in_a": {
+                "named_chosen_cipher": "PSK"
+            }
+        },
+        "critical": false,
+        "mitigation": "Utiliser un mécanisme asymétrique pour l’authentification du serveur : \n- Privilégié : ECDSA ou EdDSA\n- Acceptables :Les méthodes basées sur RSA RSASSA-PSS ou à défaut RSASSA-PKCS1-v1_5.\nOU\n mécanisme symétrique toléré : PSK"
+    },
+    "R9": {
+        "title": "Privilégier AES ou ChaCha20",
+        "description": "Les suites mettant en œuvre l’algorithme de chiffrement par bloc AES sont à privilégier. L’algorithme de chiffrement par flot ChaCha20 constitue une alternative acceptable.",
+        "requirements": {
+            "or": [
+                {
+                    "b_in_a": {
+                        "named_chosen_cipher": "AES"
+                    }
+                },
+                {
+                    "b_in_a": {
+                        "named_chosen_cipher": "ChaCha20"
+                    }
+                }
+            ]
+        },
+        "mitigation": "Utiliser pour le Chiffrement symétrique l’algorithme de chiffrement:\n- Privilégié: AES\n- Acceptables: ChaCha20"
+    },
+    "R9-": {
+        "title": "Tolérer Camellia et ARIA",
+        "description": "Les suites mettant en œuvre les algorithmes de chiffrement par bloc Camellia et ARIA sont tolérées. La prise en charge de l’algorithme AES est conseillée, mais pas obligatoire.",
+        "requirements": {
+            "or": [
+                {
+                    "b_in_a": {
+                        "named_chosen_cipher": "Camellia"
+                    }
+                },
+                {
+                    "b_in_a": {
+                        "named_chosen_cipher": "ARIA"
+                    }
+                }
+            ]
+        },
+        "critical": false,
+        "mitigation": "Utiliser pour le Chiffrement symétrique l’algorithme de chiffrement:\n- Privilégié: AES\n- Acceptables: ChaCha20\n - Tolérées: Camellia et ARIA"
+    },
+    "R10": {
+        "title": "Utiliser un mode de chiffrement intègre",
+        "description": "La suite cryptographique retenue doit mettre en œuvre un mode de chiffrement intègre. Les modes GCM et CCM (hors CCM-8) sont à privilégiés. Le mode combiné ChaCha20_Poly1305 offre une alternative acceptable.",
+        "requirements": {
+            "or": [
+                {
+                    "b_in_a": {
+                        "named_chosen_cipher": "GCM"
+                    }
+                },
+                {
+                    "b_in_a": {
+                        "named_chosen_cipher": "CCM"
+                    }
+                },
+                {
+                    "b_in_a": {
+                        "named_chosen_cipher": "ChaCha20_Poly1305"
+                    }
+                }
+            ]
+        },
+        "mitigation": "Utiliser un mode de chiffrement intègre:\n- Privilégiés: modes GCM et CCM (hors CCM-8).\n- Acceptable: mode combiné ChaCha20_Poly1305"
+    },
+    "R10-": {
+        "title": "Tolérer le mode CBC avec encrypt_then_mac",
+        "description": "La combinaison CBC + HMAC en conjonction avec l’extensions encrypt_then_mac est tolérée.",
+        "requirements": {
+            "and": [
+                {
+                    "b_in_a": {
+                        "named_chosen_cipher": "CBC"
+                    }
+                },
+                {
+                    "b_in_a": {
+                        "named_chosen_cipher": "HMAC"
+                    }
+                },
+                {
+                    "b_in_a": {
+                        "named_extensions": "encrypt_then_mac"
+                    }
+                }
+            ]
+        },
+        "critical": false,
+        "mitigation": "Utiliser un mode de chiffrement intègre:\n- Privilégiés: modes GCM et CCM (hors CCM-8).\n- Acceptable: mode combiné ChaCha20_Poly1305\n- Tolérées: La combinaison CBC + HMAC en conjonction avec l’extensions encrypt_then_mac"
+    },
+    "R11": {
+        "title": "Utiliser SHA-2 comme fonction de hachage",
+        "description": "Les fonctions de hachage de la famille SHA-2 doivent être utilisées.",
+        "requirements": {
+            "or": [
+                {
+                    "b_in_a": {
+                        "named_chosen_cipher": "SHA256"
+                    }
+                },
+                {
+                    "b_in_a": {
+                        "named_chosen_cipher": "SHA384"
+                    }
+                }
+            ]
+        },
+        "mitigation": "Utiliser une fonction de hachage de la famille SHA-2 ou SHA-3."
+    },
+    "R12": {
+        "title": "Disposer de plusieurs suites cryptographiques",
+        "description": "À des fins préventives, les parties communicantes doivent implémenter plusieurs suites acceptables. Lorsque l’infrastructure est maîtrisée de bout en bout, elles peuvent ensuite n’en utiliser qu’une seule.",
+        "requirements": {
+            "greater_or_equal": {
+                "ciphers_nb": 2
+            }
+        },
+        "mitigation": "Utiliser l’algorithme RSA pour l’échange de clé."
+    },
+    "R13": {
+        "title": "Préférer l’ordre de suites du serveur",
+        "description": "Lorsque les clients d’un serveur ne sont pas maîtrisés, l’ordre des suites cryptographiques qui figure dans sa configuration doit prévaloir sur l’ordre des suites signalées par les clients.",
+        "requirements": {
+            "prefer_server_ciphers_order": true
+        },
+        "mitigation": "Préférer l’ordre de suites cryptographiques du serveur"
+    },
+    "R14": {
+        "title": "Utiliser les extensionss du tableau 2.4",
+        "description": "Les serveurs TLS doivent prendre en charge les extensionss du tableau 2.4",
+        "requirements": {
+            "and": [
+                {
+                    "b_in_a": {
+                        "named_extensions": [
+                            "supported_groups",
+                            "signature_algorithms",
+                            "encrypt_then_mac",
+                            "named_extensionsended_master_secret",
+                            "renegotiation_info"
+                        ]
+                    }
+                },
+                {
+                    "or": [
+                        {
+                            "highest_protocol": "TLS 1.2"
+                        },
+                        {
+                            "b_in_a": {
+                                "named_extensions": [
+                                    "supported_versions",
+                                    "key_share"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "mitigation": "Les extensionss du tableau 2.4 du guide devraient être respectées dans la mesure de certains déploiements spécifiques."
+    },
+    "R15": {
+        "title": "Évaluer l’utilité des extensionss du tableau 2.8",
+        "description": "Les extensionss du tableau 2.8 du guide devraient être respectées dans la mesure de certains déploiements spécifiques. Leur non respect devra produire un avertissement.",
+        "requirements": {
+            "and": [
+                {
+                    "b_in_a": {
+                        "named_extensions": "server_name"
+                    }
+                },
+                {
+                    "b_in_a": {
+                        "named_extensions": "status_request_v2"
+                    }
+                },
+                {
+                    "b_in_a": {
+                        "named_extensions": "status_request"
+                    }
+                },
+                {
+                    "b_in_a": {
+                        "named_extensions": "status_request_v2"
+                    }
+                },
+                {
+                    "b_in_a": {
+                        "named_extensions": "session_ticket"
+                    }
+                }
+            ]
+        },
+        "critical": false,
+        "mitigation": "Les extensionss du tableau 2.8 du guide sont relatives à des déploiements spécifiques. Seules celles évaluées nécessaires doivent être implémentées et utilisées."
+    },
+    "R16": {
+        "title": "Ne pas utiliser les extensionss du tableau 2.9",
+        "description": "Les extensionss du tableau 2.9 du guide de l'ANSSI sont toujours déconseillées",
+        "requirements": {
+            "and": [
+                {
+                    "not": {
+                        "b_in_a": {
+                            "named_extensions": "max_fragment_length"
+                        }
+                    }
+                },
+                {
+                    "not": {
+                        "b_in_a": {
+                            "named_extensions": "client_certificate_url"
+                        }
+                    }
+                },
+                {
+                    "not": {
+                        "b_in_a": {
+                            "named_extensions": "truncated_hmac"
+                        }
+                    }
+                },
+                {
+                    "not": {
+                        "b_in_a": {
+                            "named_extensions": "client_authz"
+                        }
+                    }
+                },
+                {
+                    "not": {
+                        "b_in_a": {
+                            "named_extensions": "server_authz"
+                        }
+                    }
+                },
+                {
+                    "not": {
+                        "b_in_a": {
+                            "named_extensions": "cert_type"
+                        }
+                    }
+                },
+                {
+                    "not": {
+                        "b_in_a": {
+                            "named_extensions": "ec_point_formats"
+                        }
+                    }
+                },
+                {
+                    "not": {
+                        "b_in_a": {
+                            "named_extensions": "heartbeat"
+                        }
+                    }
+                },
+                {
+                    "not": {
+                        "b_in_a": {
+                            "named_extensions": "client_certificate_type"
+                        }
+                    }
+                },
+                {
+                    "not": {
+                        "b_in_a": {
+                            "named_extensions": "server_certificate_type"
+                        }
+                    }
+                },
+                {
+                    "not": {
+                        "b_in_a": {
+                            "named_extensions": "early_data"
+                        }
+                    }
+                }
+            ]
+        },
+        "critical": false,
+        "mitigation": "Les extensionss du tableau 2.9 du guide de l'ANSSI ne doivent pas être utilisées par le serveur"
+    },
+    "R17": {
+        "title": "Utiliser un générateur d’aléa robuste",
+        "description": "Les aléas utilisés dans le ClientHello et le ServerHello doivent provenir de générateurs d’aléa de qualité cryptographique.",
+        "auditable": false,
+        "critical": false,
+        "mitigation": "Vérifier que le générateur d'aléa du serveur est de qualité cryptographique."
+    },
+    "R18": {
+        "title": "Privilégier l’aléa du serveur avec un suffixe prédictible",
+        "description": "L’aléa utilisé dans le ClientHello doit privilégier une construction sur 32 octets aléatoires tandis que l’aléa utilisé dans le ServerHello doit privilégier une construction de 24 octets aléatoires avec, en suffixe les valeurs spécifiées dans rfc8446#section-4.1.3 :- 44 4F 57 4E 47 52 44 01",
+        "requirements": {
+            "or": [
+                {
+                    "not": {
+                        "b_in_a": {
+                            "named_protocols": "TLS 1.3"
+                        }
+                    }
+                },
+                {
+                    "endswith": {
+                        "random_hex": "444F574E47524401"
+                    }
+                }
+            ]
+        },
+        "mitigation": "Privilégier l’aléa du serveur avec un suffixe prédictible"
+    },
+    "R18-": {
+        "title": "Privilégier les aléas sans préfixe prédictible",
+        "description": "Les aléas utilisés dans le ClientHello et le ServerHello doivent privilégier les 32 octets aléatoires plutôt que la construction préfixée par une heure Unix.",
+        "requirements": {
+            "random_startswith_timestamp": false
+        },
+        "critical": false,
+        "mitigation": "Désactiver le préfixe d'heure Unix."
+    },
+    "R19": {
+        "title": "Ne pas utiliser la compression TLS",
+        "description": "L’utilisation du mécanisme de compression TLS est à proscrire.",
+        "requirements": {
+            "supports_compression": false
+        },
+        "mitigation": "Ne pas utiliser la compression TLS"
+    },
+    "R20": {
+        "title": "Limiter la durée de vie des tickets",
+        "description": "Le serveur doit être configuré afin d’émettre des tickets dont la durée de vie n’excède pas 24 heures.",
+        "requirements": {
+            "not": {
+                "greater": {
+                    "session_ticket_lifetime": 86400
+                }
+            }
+        },
+        "mitigation": "Limiter le temps de validité des tickets de session à 24 heures."
+    },
+    "R21": {
+        "title": "Effectuer des reprises de session avec échange de clé",
+        "description": "L’utilisation du mécanisme de reprise de session avec un échange de clé Diffie–Hellman est recommandée.",
+        "auditable": false,
+        "critical": false,
+        "mitigation": "Lors d'une reprise de session, un échange de clé Diffie–Hellman doit être effectué."
+    },
+    "R22": {
+        "title": "Toujours activer l’extensions pour la renégociation sécurisée",
+        "description": "Un serveur TLS, s’il souhaite effectuer des renégociations, doit utiliser l’extensions renegotiation_info.",
+        "requirements": {
+            "b_in_a": {
+                "named_extensions": "renegotiation_info"
+            }
+        },
+        "auditable": false,
+        "critical": false,
+        "mitigation": "Activer la renégociation sécurisée."
+    },
+    "R23": {
+        "title": "Ne pas transmettre de données 0-RTT",
+        "description": "Il est déconseillé à un client de transmettre de données 0-RTT. Un serveur ne doit pas accepter les données 0-RTT lorsqu’il en reçoit.",
+        "requirements": {
+            "is_0RTT": false
+        },
+        "mitigation": "Les données 0-RTT doivent être refusées par le serveur lorsqu'il en reçoit."
+    },
+    "R24": {
+        "title": "Présenter un certificat signé avec SHA-2",
+        "description": "La fonction de hachage utilisée pour la signature du certificat doit faire partie de la famille SHA-2.",
+        "requirements": {
+            "or": [
+                {
+                    "b_in_a": {
+                        "cert.sigAlg": "sha2"
+                    }
+                },
+                {
+                    "b_in_a": {
+                        "cert.sigAlg": "sha3"
+                    }
+                }
+            ]
+        },
+        "mitigation": "Présenter un certificat signé avec SHA-2 ou SHA-3"
+    },
+    "R25": {
+        "title": "Présenter un certificat valide pendant 3 ans ou moins",
+        "description": "La période de validité d’un certificat d’authentification TLS (serveur ou client) ne doit pas excéder 3 ans. Pour un certificat émis après le 1er mars 2018, sa période devalidité ne doit pas dépasser 825 jours.",
+        "requirements": {
+            "lower_or_equal": {
+                "cert_validity_period": 1095
+            }
+        },
+        "mitigation": "Le certificat doit etre valide pendant 3 ans ou moins"
+    },
+    "R26": {
+        "title": "Utiliser des clés de taille suffisante",
+        "description": "Les clés RSA doivent avoir une taille minimale de 2048 bits, et les clés ECDSA doivent avoir une taille minimale de 256 bits. Pour ECDSA, les courbes éprouvées retenues sont secp256r1, secp384r1, secp521r1, ainsi que brainpoolP256r1, brainpoolP384r1 et brainpoolP512r1. Pour RSA, l’exposant de la clé publique doit être supérieur ou égal à 2^16 + 1.",
+        "requirements": {
+            "or": [
+                {
+                    "and": [
+                        {
+                            "public_key_type": "RSA"
+                        },
+                        {
+                            "greater_or_equal": {
+                                "public_key_size": 2048
+                            }
+                        },
+                        {
+                            "greater_or_equal": {
+                                "public_key_exponent": 65537
+                            }
+                        }
+                    ]
+                },
+                {
+                    "and": [
+                        {
+                            "public_key_type": "ECDSA"
+                        },
+                        {
+                            "greater_or_equal": {
+                                "public_key_size": 256
+                            }
+                        },
+                        {
+                            "a_in_b": {
+                                "public_key_curve": [
+                                    "secp256r1",
+                                    "secp384r1",
+                                    "secp521r1",
+                                    "brainpoolP256r1",
+                                    "brainpoolP384r1",
+                                    "brainpoolP512r1"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "mitigation": "Utiliser des clés de taille minimale de 2048 bits pour RSA , de 256 bits pour ECDSA, l’exposant de la clé publique doit être supérieur ou égal à 216 + 1 et pour ECDSA utiliser les courbes éprouvées"
+    },
+    "R27": {
+        "title": "Présenter un KeyUsage approprié",
+        "description": "Dans un certificat d’authentification, l’extensions Key Usage doit être présente et marquée comme critique. Pour un serveur, elle doit contenir les valeurs digitalSignature et/ou keyEncipherment. Pour un client, elle doit contenir la valeur digitalSignature. Aucune autre valeur n’est admise.",
+        "requirements": {
+            "and": [
+                {
+                    "a_in_b": {
+                        "cert_key_usage.content": [
+                            "digitalSignature",
+                            "keyEncipherment"
+                        ]
+                    }
+                },
+                {
+                    "cert_key_usage.critical": true
+                }
+            ]
+        },
+        "mitigation": "Mettre l'extensions Key Usage comme non-critique et comme valeur digitalSignature ou keyEncipherment pour le serveur , et digitalSignature pour le client"
+    },
+    "R28": {
+        "title": "Présenter un ExtendedKeyUsage approprié",
+        "description": "Dans un certificat d’authentification, l’extensions Extended Key Usage doit être présente et marquée comme non-critique. Pour un serveur, elle doit uniquement contenir la valeur id-kp-serverAuth. Pour un client, elle doit uniquement contenir la valeur id-kp-clientAuth.",
+        "requirements": {
+            "and": [
+                {
+                    "cert_ext_key_usage.content": [
+                        "serverAuth"
+                    ]
+                },
+                {
+                    "cert_ext_key_usage.critical": false
+                }
+            ]
+        },
+        "mitigation": "Mettre l'extensions named_extensionsended Key Usage comme non-critique et comme valeur id-kp-serverAuth pour un serveur et id-kp-clientAuth pour un client"
+    },
+    "R29": {
+        "title": "Présenter un SubjectAlternativeName approprié (côté serveur)",
+        "description": "Pour un certificat d’authentification utilisé par un serveur TLS, l’extension Subject Alternative Name doit être présente et marquée comme non-critique. Elle doit contenir au moins une entrée DNSName correspondant à l’un des FQDN du service applicatif qui utilise le certificat.",
+        "requirements": {
+            "and": [
+                {
+                    "not": {
+                        "len": {
+                            "cert_subject_alt_name.content": 0
+                        }
+                    }
+                },
+                {
+                    "cert_subject_alt_name.critical": false
+                }
+            ]
+        },
+        "mitigation": "Mettre l'extension Subject Alternative Name comme non-critique et doit contenir un des FQDN du service applicatif qui utilise le certificat"
+    },
+    "R30": {
+        "title": "Réserver chaque certificat à une seule terminaison TLS",
+        "description": "Un même certificat d’authentification ne doit pas être utilisé par plus d’une seule terminaison TLS.",
+        "auditable": false,
+        "critical": false,
+        "mitigation": "Créer un certificat d'authentification pour chaque terminaison TLS."
+    },
+    "R31": {
+        "title": "Chaque version TLS doit réserver un certificat différent",
+        "description": "Pour une même terminaison, il est recommandé d’utiliser autant de certificats que de versions et de méthodes d’échange de clés acceptées.",
+        "requirements": {
+            "are_all_versions_certs_different": true
+        },
+        "mitigation": "Utiliser un certificat différent pour chaque version de TLS acceptée."
+    },
+    "R32": {
+        "title": "Présenter un AKI correspondant au SKI défini par l’AC",
+        "description": "Pour un certificat d’authentification TLS (serveur ou client), l’extensions AKI doit être présente, marquée comme non-critique et contenir l’identifiant présent dans l’extensions SKI du certificat de l’AC relatif à la clé de signature utilisée",
+        "requirements": {
+            "validate_cert_chain": true
+        },
+        "mitigation": "La chaine de certification doit être revue et corrigée pour que l'AKI du certificat d'authentification corresponde au SKI défini par l'AC."
+    },
+    "R33": {
+        "title": "Présenter un certificat avec des sources de révocation",
+        "description": "Au moins une extensions parmi CRLDP et AIA doit être présente et marquée comme non-critique",
+        "requirements": {
+            "or": [
+                {
+                    "and": [
+                        {
+                            "cert_crl_distribution_points.critical": false
+                        }
+                    ]
+                },
+                {
+                    "and": [
+                        {
+                            "cert_authority_info_access.critical": false
+                        }
+                    ]
+                }
+            ]
+        },
+        "mitigation": "L'extensions CRLDP ou AIA doit être présente et non-critique"
+    },
+    "R34": {
+        "title": "Transmettre une chaîne de certificats ordonnée et complète",
+        "description": "Les chaînes de certificats transmises à l’aide des messages Certificate doivent, afin de conserver une compatibilité avec TLS 1.2, être ordonnées et complètes.",
+        "requirements": {
+            "validate_cert_chain": true
+        },
+        "mitigation": "La chaine de certificats doit être revue et corrigée."
+    },
+    "R35": {
+        "title": "Préférer l’agrafage OCSP",
+        "description": "Lorsque le protocole OCSP est mis en œuvre, il est recommandé d’utiliser l’agrafage OCSP. Cette solution est aussi préférable à la distribution de CRL.",
+        "requirements": {
+            "ocsp_stapling": true
+        },
+        "mitigation": "L'agrafage OCSP doit être activé dans la configuration du serveur TLS."
+    },
+    "R36": {
+        "title": "Prévoir une redondance des moyens de révocation",
+        "description": "Pour des raisons de disponibilité, des mécanismes de redondance de publication des informations de révocation doivent être mis en oeuvre.",
+        "requirements": {
+            "or": [
+                {
+                    "and": [
+                        {
+                            "len": {
+                                "operand": ">=",
+                                "cert_crl_distribution_points.content": 1
+                            }
+                        },
+                        {
+                            "len": {
+                                "oeprand": ">=",
+                                "cert_authority_info_access.content": 1
+                            }
+                        }
+                    ]
+                },
+                {
+                    "len": {
+                        "operand": ">=",
+                        "cert_crl_distribution_points.content": 2
+                    }
+                },
+                {
+                    "len": {
+                        "operand": ">=",
+                        "cert_authority_info_access.content": 2
+                    }
+                }
+            ]
+        },
+        "mitigation": "Une redondance des mécanismes de publication des informations de révocation doit être mise en oeuvre."
+    },
+    "R37": {
+        "title": "Réagir en hard-fail si le besoin de sécurité est prédominant",
+        "description": "Les composants logiciels TLS privilégiant la sécurité doivent réagir en hard-fail.",
+        "auditable": false,
+        "critical": false,
+        "mitigation": "Cette mesure concerne les composants clients TLS. Ceux-ci doivent veiller à réagir en hard-fail (refus de connexion) dans le cas d'un répondeur OCSP où d'une CRL indisponible."
+    },
+    "R38": {
+        "title": "Utiliser des certificats enregistrés par CT",
+        "description": "Dans le cadre d’une IGC publique, il est recommandé d’utiliser des certificats d’authentification enregistrés par leur AC parmi les registres du programme CT.",
+        "auditable": false,
+        "critical": false,
+        "mitigation": "Utiliser des certificats enregistrés par leur AC parmi les registres du programme CT."
+    },
+    "R39": {
+        "title": "Rejeter tous les certificats invalidés par CT",
+        "description": "Dans le cadre d’une IGC publique, les clients TLS doivent rejeter tous les certificats qui sont accompagnés d’un Signed Certificate Timestamp (SCT) invalide, et les certificats EV qui ne sont pas accompagnés d’un SCT.",
+        "auditable": false,
+        "critical": false,
+        "mitigation": "Cette mesure concerne les composants clients TLS."
+    }
+}

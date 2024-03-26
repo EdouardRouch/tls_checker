@@ -1,0 +1,58 @@
+{
+  "id": 145,
+  "hex_handshake_bytes": "16030100ab010000a70303618edea4e5ecaa378efef358baadb5f4eecd224a2e8474508c564d644dbbf23100001ec02bc02fcca9cca8c02cc030c009c013c00ac014009c009d002f0035000a01000060ff0100010000000014001200000f6465762e73736c6c6162732e636f6d0017000000230000000d001400120403080404010503080505010806060102010005000501000000003374000000120000000b00020100000a00080006001d00170018",
+  "lowest_protocol": 768,
+  "highest_protocol": 771,
+  "suite_names": [
+    "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
+    "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
+    "TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256",
+    "TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256",
+    "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
+    "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
+    "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA",
+    "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA",
+    "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA",
+    "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA",
+    "TLS_RSA_WITH_AES_128_GCM_SHA256",
+    "TLS_RSA_WITH_AES_256_GCM_SHA384",
+    "TLS_RSA_WITH_AES_128_CBC_SHA",
+    "TLS_RSA_WITH_AES_256_CBC_SHA",
+    "TLS_RSA_WITH_3DES_EDE_CBC_SHA"
+  ],
+  "supports_compression": false,
+  "supports_stapling": true,
+  "supports_tickets": true,
+  "signature_algorithms": [
+    1027,
+    2052,
+    1025,
+    1283,
+    2053,
+    1281,
+    2054,
+    1537,
+    513
+  ],
+  "elliptic_curves": [
+    29,
+    23,
+    24
+  ],
+  "supports_npn": true,
+  "alpn_protocols": [],
+  "supports_server_name_indication": true,
+  "client_name": "Googlebot",
+  "client_version": "Feb 2018",
+  "protocol_versions_names": [
+    "SSLv3",
+    "TLS 1.0",
+    "TLS 1.1",
+    "TLS 1.2"
+  ],
+  "elliptic_curves_names": [
+    "x25519",
+    "secp256r1",
+    "secp384r1"
+  ]
+}

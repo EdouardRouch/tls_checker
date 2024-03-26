@@ -1,0 +1,57 @@
+{
+  "id": 34,
+  "platform": "OS X 10.8.4",
+  "hex_handshake_bytes": "16030100a9010000a5030151fa327c6576dadde1e8a89d4d45bdc1d0c107b8cbe998337e02ca419a0bcb30204dd1c85d9fbc1607b27a35ec9dfd1dae2c589483843a73999c9de205748633b1003200ffc00ac009c007c008c014c013c011c012c004c005c002c003c00ec00fc00cc00d002f000500040035000a0033003900160100002a00000014001200000f7777772e73736c6c6162732e636f6d000a00080006001700180019000b00020100",
+  "lowest_protocol": 768,
+  "highest_protocol": 769,
+  "suite_names": [
+    "TLS_EMPTY_RENEGOTIATION_INFO_SCSV",
+    "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA",
+    "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA",
+    "TLS_ECDHE_ECDSA_WITH_RC4_128_SHA",
+    "TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA",
+    "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA",
+    "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA",
+    "TLS_ECDHE_RSA_WITH_RC4_128_SHA",
+    "TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA",
+    "TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA",
+    "TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA",
+    "TLS_ECDH_ECDSA_WITH_RC4_128_SHA",
+    "TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA",
+    "TLS_ECDH_RSA_WITH_AES_128_CBC_SHA",
+    "TLS_ECDH_RSA_WITH_AES_256_CBC_SHA",
+    "TLS_ECDH_RSA_WITH_RC4_128_SHA",
+    "TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA",
+    "TLS_RSA_WITH_AES_128_CBC_SHA",
+    "TLS_RSA_WITH_RC4_128_SHA",
+    "TLS_RSA_WITH_RC4_128_MD5",
+    "TLS_RSA_WITH_AES_256_CBC_SHA",
+    "TLS_RSA_WITH_3DES_EDE_CBC_SHA",
+    "TLS_DHE_RSA_WITH_AES_128_CBC_SHA",
+    "TLS_DHE_RSA_WITH_AES_256_CBC_SHA",
+    "TLS_DHE_RSA_WITH_3DES_EDE_CBC_SHA"
+  ],
+  "supports_compression": false,
+  "supports_stapling": false,
+  "supports_tickets": false,
+  "signature_algorithms": [],
+  "elliptic_curves": [
+    23,
+    24,
+    25
+  ],
+  "supports_npn": false,
+  "alpn_protocols": [],
+  "supports_server_name_indication": true,
+  "client_name": "Safari",
+  "client_version": "6.0.4",
+  "protocol_versions_names": [
+    "SSLv3",
+    "TLS 1.0"
+  ],
+  "elliptic_curves_names": [
+    "secp256r1",
+    "secp384r1",
+    "secp521r1"
+  ]
+}
