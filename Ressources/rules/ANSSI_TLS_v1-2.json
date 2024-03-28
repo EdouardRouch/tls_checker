@@ -81,7 +81,7 @@
         "requirements": {
                 "validate_cert_chain": true
         },
-        "mitigation": "TODO"
+        "mitigation": "Utiliser des certificats valides émis par des autorités de certification reconnues pour l'authentification du serveur. Désactiver tout échange de clés anonyme ou basé sur des certificats bruts."
     },
 
     "R6": {
