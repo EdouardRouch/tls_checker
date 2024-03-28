@@ -1314,16 +1314,13 @@ class Results:
 
         Returns:
             None
-        """       
-        if "md5" in self.certs[0].sigAlg:
+        """
+        sig_alg = self.certs[0].sigAlg.upper()       
+        if "SHA1" in sig_alg or "MD5" in sig_alg :
             self.grade_cert *= 0
-        elif "sha1" in self.certs[0].sigAlg:
-            self.grade_cert *= 0
-        elif "sha2" in self.certs[0].sigAlg:
-            self.grade_cert *= 1
-        elif "sha384" in self.certs[0].sigAlg:
-            self.grade_cert *= 1
-        elif "sha512" in self.certs[0].sigAlg:
+        elif "SHA2" in sig_alg or \
+             "SHA384" in sig_alg or \
+             "SHA512" in sig_alg :
             self.grade_cert *= 1
         else:
             self.grade_cert -= 1
