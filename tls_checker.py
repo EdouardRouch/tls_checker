@@ -2827,6 +2827,9 @@ class TLS_Checker:
             case 'greater_or_equal':
                 k, v = req['greater_or_equal'].popitem()
                 return self.server_params.get(k) >= v
+            case 'lower':
+                k, v = req['lower'].popitem()
+                return self.server_params.get(k) < v
             case 'lower_or_equal':
                 k, v = req['lower_or_equal'].popitem()
                 return self.server_params.get(k) <= v
@@ -2871,6 +2874,9 @@ class TLS_Checker:
                 k, v  = req.popitem()
                 return self.server_params.get(k) == v
             
+    def rule_test(self, req: str) -> bool:
+        return eval(req)
+
 def get_args(json_args={}):
     """
     Sets argparse options.
